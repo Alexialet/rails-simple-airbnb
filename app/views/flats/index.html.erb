@@ -1,0 +1,36 @@
+<div class="navbar-home">
+    <a href="/" class="navbar-wagon-brand">Simple Airbnb
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wikinimous-right hidden-xs hidden-sm">
+
+    <a href="new_article_path" class="navbar-wikinimous-item navbar-wikinimous-link"><%= link_to "Add a flat", new_flat_path(@flat) %></a>
+  </div>
+</div>
+<div class="container">
+  <h2> All our flats</h2>
+
+  <div class="row">
+      <% @flats.each do |flat| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="flat-card" style="width: 20rem;">
+          <img class="flat-card-image" src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">
+            <%= flat.name %>
+            </h4>
+            <p class="card-text"><%= flat.description %>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <%= flat.number_of_guests %>
+              <i class="fa fa-eur" aria-hidden="true"></i>
+              <%= flat.price_per_night %> </p>
+        <p> <%= link_to '<i class="fa fa-info" aria-hidden="true"></i>'.html_safe, flat_path(flat) %> <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_flat_path(flat) %> <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, flat_path(flat),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %> </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

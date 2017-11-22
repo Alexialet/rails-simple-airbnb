@@ -39,6 +39,11 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'bootstrap-sass'
+  gem 'font-awesome-sass'
+  gem 'simple_form'
+  gem 'autoprefixer-rails'
+  gem 'jquery-rails' # Add this line if you use Rails 5.1
 end
 
 group :development do
